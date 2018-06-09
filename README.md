@@ -4,14 +4,14 @@
 
 **Approch**: Adapted a pre-trained FCN to a simplified version of the [FCN8](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf). Added **1x1 convolutions** to the **pretrained VGG16** feature encoder reducing into a 2-pixel classifier (road/no-road). Also added 2 **transposed convolutions** scaling up the image to its original size, shape = (160, 576). Connected 2 **skip layers** from layer 3 and 4 to improve resolution. 
 
-After training, the test images are processed to highlight the detected road pixels in green, see [results](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50).The project solution must satisfy the [rubric](https://review.udacity.com/#!/rubrics/989/view) conditions.
+After the training process all test images are processed to highlight the detected road pixels in green color overlay. Please see complete [results](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50) of the fully trained and adapted FCN. The project solution must satisfy the [rubric](https://review.udacity.com/#!/rubrics/989/view) conditions.
 
 ### Graph Diagram
 
 ![img](./img/graph_1528540282.322428_BS5_DP0.50_LR0.0001_EP50.png)
 
 ### Training and Hyperparams
-The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) (289 images) for 15 epochs with batch size of 5. Other batch sizes showed significant differences in accuracy and 5 seems a good balance between preventing over-fitting, memory usage and accuracy.
+The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) (289 images) for 15 epochs with batch size of 5. Other batch sizes showed significant differences in accuracy and 5 seems a good balance between preventing early over-fitting, exhaustive memory usage and high accuracy.
 
 ##### Accuracy and total loss running BATCH_SIZE=(5, 10, 15), LEARNING_RATE=0.0001 and EPOCHS=15:
 
@@ -59,7 +59,7 @@ The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/dataset
 
 ![img](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50/um_000074.png)
 
-![img](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50/um_000087.png)
+![img](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50/umm_000069.png)
 
 ![img](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50/um_000093.png)
 
@@ -87,7 +87,7 @@ Make sure you have the following is installed:
 ```
 git clone https://github.com/tochalid/SS_Cman.git
 ```
-Download and extract the [dataset](http://www.cvlibs.net/download.php?file=data_road.zip)  in the `data` folder.  This will create the folder `data_road` with all the training a test images.
+Download and extract the [dataset](http://www.cvlibs.net/download.php?file=data_road.zip)  in the `data` folder.  This will create the folder `data_road` with all the training and test images.
 
 ```
 python main.py
@@ -99,7 +99,7 @@ tensorboard --logdir ./tb
 Call [http://TB_HOSTNAME:6006](http://TB_HOSTNAME:6006) in your browser
 
 ##### Refs
-- The link for the frozen `VGG16` model is hardcoded into `helper.py`.  The model can be found [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/vgg.zip)
+- The link for the frozen `VGG16` model is hardcoded into `helper.py`. The model can be found [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/vgg.zip)
 - The model is not vanilla `VGG16`, but a fully convolutional version, which already contains the 1x1 convolutions to replace the fully connected layers. Please see this [forum post](https://discussions.udacity.com/t/here-is-some-advice-and-clarifications-about-the-semantic-segmentation-project/403100/8?u=subodh.malgonde) for more information.
 - The Udacity project repository is [here](https://github.com/udacity/CarND-Semantic-Segmentation)
 - How to use TensorBoard see [here](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard)
