@@ -11,7 +11,13 @@ After the training process all test images are processed to highlight the detect
 ![img](./img/graph_1528540282.322428_BS5_DP0.50_LR0.0001_EP50.png)
 
 ### Training and Hyperparams
-The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) (289 images) for 15 epochs with batch size of 5. Other batch sizes showed significant differences in accuracy and 5 seems a good balance between preventing early over-fitting, exhaustive memory usage and high accuracy.
+The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) (289 images) for **50 epochs** with **batch size of 5** and **learning rate 0.0001**. Other batch sizes showed significant differences in accuracy and 5 seems a good balance between preventing early over-fitting, exhaustive memory usage and high accuracy. Higher learning rate showed less accuracy.
+
+> Accuracy and total loss running BATCH_SIZE=5, LEARNING_RATE=0.0001 and EPOCHS=50:
+
+![img](./img/Screenshot_1528540282.322428_BS5_DP0.50_LR0.0001_EP50_accuracy.png)
+
+![img](./img/Screenshot_1528540282.322428_BS5_DP0.50_LR0.0001_EP50_total_loss.png)
 
 > Accuracy and total loss running BATCH_SIZE=(5, 10, 15), LEARNING_RATE=0.0001 and EPOCHS=15:
 
@@ -24,12 +30,6 @@ The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/dataset
 ![img](./img/Screenshot_BS5_DP0.50_LR0.0001-0005-001_EP15_accuracy.png)
 
 ![img](./img/Screenshot_BS5_DP0.50_LR0.0001-0005-001_EP15_total_loss.png)
-
-> Accuracy and total loss running BATCH_SIZE=5, LEARNING_RATE=0.0001 and EPOCHS=50:
-
-![img](./img/Screenshot_1528540282.322428_BS5_DP0.50_LR0.0001_EP50_accuracy.png)
-
-![img](./img/Screenshot_1528540282.322428_BS5_DP0.50_LR0.0001_EP50_total_loss.png)
 
 ### Result samples
 
