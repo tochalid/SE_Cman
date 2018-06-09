@@ -1,2 +1,3 @@
-data_road/
-vgg/
+data/
+models/
+tb/
