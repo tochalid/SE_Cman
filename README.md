@@ -13,27 +13,27 @@ After the training process all test images are processed to highlight the detect
 ### Training and Hyperparams
 The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) (289 images) for 15 epochs with batch size of 5. Other batch sizes showed significant differences in accuracy and 5 seems a good balance between preventing early over-fitting, exhaustive memory usage and high accuracy.
 
-##### Accuracy and total loss running BATCH_SIZE=(5, 10, 15), LEARNING_RATE=0.0001 and EPOCHS=15:
+> Accuracy and total loss running BATCH_SIZE=(5, 10, 15), LEARNING_RATE=0.0001 and EPOCHS=15:
 
 ![img](./img/Screenshot_BS5-10-15_DP0.50_LR0.0001_EP15_accuracy.png)
 
-![img](.img/Screenshot_BS5-10-15_DP0.50_LR0.0001_EP15_total_loss.png)
+![img](./img/Screenshot_BS5-10-15_DP0.50_LR0.0001_EP15_total_loss.png)
 
-##### Accuracy and total loss running BATCH_SIZE=5, LEARNING_RATE=(0.0001, 0.0005, 0.001) and EPOCHS=15:
+> Accuracy and total loss running BATCH_SIZE=5, LEARNING_RATE=(0.0001, 0.0005, 0.001) and EPOCHS=15:
 
 ![img](./img/Screenshot_BS5_DP0.50_LR0.0001-0005-001_EP15_accuracy.png)
 
 ![img](./img/Screenshot_BS5_DP0.50_LR0.0001-0005-001_EP15_total_loss.png)
 
-##### Accuracy and total loss running BATCH_SIZE=5, LEARNING_RATE=0.0001 and EPOCHS=50:
+> Accuracy and total loss running BATCH_SIZE=5, LEARNING_RATE=0.0001 and EPOCHS=50:
 
 ![img](./img/Screenshot_1528540282.322428_BS5_DP0.50_LR0.0001_EP50_accuracy.png)
 
 ![img](./img/Screenshot_1528540282.322428_BS5_DP0.50_LR0.0001_EP50_total_loss.png)
 
-### Project Result Samples:
+### Result samples
 
-##### Good road pixel detection:
+> Good road pixel detection:
 
 ![img](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50/um_000013.png)
 
@@ -51,7 +51,7 @@ The network is trained on the [KITTI Raod dataset](http://www.cvlibs.net/dataset
 
 ![img](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50/uu_000062.png)
 
-##### Poor road pixel detection:
+> Poor road pixel detection:
 
 ![img](./runs/1528540282.322428_BS5_DP0.50_LR0.0001_EP50/um_000012.png)
 
@@ -77,7 +77,7 @@ To run the project several technical preconditions need to be established.
 If you run a GPU **double-check compatibility** of package versions, eg. tensorflow 1, cuda 9, cudnn 7 !
 
 ##### Frameworks and Packages
-Make sure you have the following is installed:
+Make sure the following is installed:
  - [Python 3](https://www.python.org/)
  - [TensorFlow](https://www.tensorflow.org/)
  - [NumPy](http://www.numpy.org/)
